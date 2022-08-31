@@ -31,7 +31,7 @@ int	expose_hook(t_fdf *f)
 	if (f->image)
 		mlx_destroy_image(f->mlx_ptr, f->image);
 	f->image = mlx_new_image(f->mlx_ptr, LARGEUR, HAUTEUR);
-	f->data = mlx_get_data_addr(f->image, &f->bpp, &f->t, &f->endian);
+	f->data = mlx_get_data_addr(f->image, &f->bpp, &f->size_l, &f->endian);
 	ft_draw_the_map(f->count_x, f->count_y, f->tab, f);
 	mlx_put_image_to_window(f->mlx_ptr, f->win_ptr, f->image, 0, 0);
 	return (0);

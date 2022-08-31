@@ -27,7 +27,7 @@ B_MAGENTA 		= \033[1;35m
 B_CYAN 			= \033[1;36m
 
 ./.build/%.o : %.c
-	@$(CC) ${CFLAGS} -I. -o $@ -c $?
+	@$(CC) ${CFLAGS} -g -fsanitize=address -I. -o $@ -c $?
 	@printf "${B_MAGENTA}Compilling $? ...\n${NONE}"
 
 all :
@@ -37,7 +37,7 @@ all :
 ${NAME} : $(OBJ)
 	${LIBFT}
 	${MLX}
-	@${CC} -o ${NAME} ${OBJ}  libft/libft.a -L ./minilibx-linux -lmlx -lXext -lX11 \
+	@${CC} -o ${NAME} ${OBJ} -g -fsanitize=address libft/libft.a -L ./minilibx-linux -lmlx -lXext -lX11 \
 	-lm
 	@printf "${B_GREEN}==>{${NAME}} LINKED SUCCESFULLY<==${NONE}\n"
 

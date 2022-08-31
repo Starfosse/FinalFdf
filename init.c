@@ -63,8 +63,8 @@ void	print_map(int **map, int count_x, int count_y) {
  	x = 0;
  	while (y < count_y) {
  		while (x < count_x) {
- 			x++;
  			printf("[%d]", map[y][x]);
+ 			x++;
  		}
 		printf("\n");
  		y++;

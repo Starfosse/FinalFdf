@@ -41,6 +41,7 @@ typedef struct s_fdf
 	char	**lines;
 	int		zoom;
 	int		**tab;
+	int		size_l;
 }			t_fdf;
 
 typedef struct s_segment
