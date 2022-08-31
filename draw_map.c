@@ -5,7 +5,7 @@ void	draw_pixel(t_fdf *fdf, int x1, int y1)
 	size_t	index;
 	if (y1 >= HAUTEUR || x1 >= LARGEUR || x1 < 0 || y1 < 0)
 		return ;
-	printf("%d %d\n", x1, y1);
+	// printf("%d %d\n", x1, y1);
 	index = (y1 * fdf->size_l) + x1 * (fdf->bpp / 8);
 	fdf->data[index + 3] = (fdf->color & 0xFF000000) >> 24;
 	fdf->data[index + 2] = (fdf->color & 0x00FF0000) >> 16;
